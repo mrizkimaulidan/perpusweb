@@ -2,10 +2,10 @@
   <aside id="sidebar-wrapper">
     @if(auth()->user()->id === 1 || auth()->user()->id === 2)
     <div class="sidebar-brand">
-      <a href="{{ route('admin.dashboard.index') }}">Stisla</a>
+      <a href="{{ route('admin.dashboard.index') }}">{{ config('app.name') }}</a>
     </div>
     <div class="sidebar-brand sidebar-brand-sm">
-      <a href="{{ route('admin.dashboard.index') }}">St</a>
+      <a href="{{ route('admin.dashboard.index') }}">{{ Str::limit(config('app.name'), 2, '') }}</a>
     </div>
     <ul class="sidebar-menu">
       <li class="{{ Request::segment(2) === 'dashboard' ? 'active' : '' }}">
