@@ -27,7 +27,7 @@
           <tr>
             <td>{{ $loop->iteration }}</td>
             <td>{{ $book_user->user->name }}</td>
-            <td>{{ $book_user->book->title }}</td>
+            <td>{{ Str::limit($book_user->book->title, 40, '...') }}</td>
             <td>{{ date_format(date_create($book_user->date_start), 'd-m-Y') }}</td>
             <td>{{ date_format(date_create($book_user->date_end), 'd-m-Y') }}</td>
             <td>
