@@ -20,7 +20,7 @@
           <tr>
             <td>{{ $loop->iteration }}</td>
             <td>{{ $book_user->user->name }}</td>
-            <td>{{ $book_user->book->title }}</td>
+            <td>{{ Str::limit($book_user->book->title, '40', '...') }}</td>
             @if($book_user->status === 1)
             <td class="text-success text-wrap">Disetujui</td>
             @else
