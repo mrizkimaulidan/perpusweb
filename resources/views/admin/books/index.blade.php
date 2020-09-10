@@ -26,7 +26,7 @@
           <tr>
             <td>{{ $loop->iteration }}</td>
             <td>{{ $book->book_number }}</td>
-            <td>{{ $book->title }}</td>
+            <td>{{ Str::limit($book->title, 40, '...') }}</td>
             <td>{{ $book->publisher }}</td>
             <td>
               <a href="{{ route('admin.books.show', $book->id) }}" data-id="{{ $book->id }}" class="btn btn-sm btn-info swal-show-a">
