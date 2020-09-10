@@ -52,7 +52,7 @@ https://github.com/mrizkimaulidan/perpusweb.git
 ```
 
 ```
-https://github.com/mrizkimaulidan/perpusweb.git
+git@github.com:mrizkimaulidan/perpusweb.git
 ```
 
 -   Install seluruh packages yang dibutuhkan
