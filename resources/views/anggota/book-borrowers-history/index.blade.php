@@ -31,7 +31,7 @@
             @elseif($my_book->status === 2)
             <td class="badge badge-pill badge-warning shadow-sm my-2" data-toggle="tooltip" data-placement="top" title="Menunggu">Menunggu</td>
             @else
-            <td class="badge badge-pill badge-danger shadow my-2" data-toggle="tooltip" data-placement="top" title="Menunggu">Tidak Disetujui</td>
+            <td class="badge badge-pill badge-danger shadow my-2" data-toggle="tooltip" data-placement="top" title="Tidak Disetujui">Tidak Disetujui</td>
             @endif
             <td>{{ $my_book->updated_at !== NULL ? $my_book->updated_at : '-' }}</td>
             <td>
