@@ -62,6 +62,7 @@ composer install
 ```
 
 -   Siapkan database dan atur file .env sesuai dengan konfigurasi Anda
+-   Ubah value APP_NAME= pada file .env menjadi nama aplikasi yang anda inginkan
 -   Jika sudah, migrate seluruh migrasi dan seeding data
 
 ```
