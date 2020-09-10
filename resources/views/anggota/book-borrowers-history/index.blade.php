@@ -33,7 +33,7 @@
             @else
             <td class="text-danger text-wrap">Tidak Disetujui</td>
             @endif
-            <td>{{ $my_book->updated_at }}</td>
+            <td>{{ $my_book->updated_at !== NULL ? $my_book->updated_at : '-' }}</td>
             <td>
               <a href="{{ route('anggota.book-borrowers-history.show', $my_book->id) }}" data-id="{{ $my_book->id }}" class="btn btn-sm btn-info swal-show">
                 <i class="fas fa-info-circle"></i>
