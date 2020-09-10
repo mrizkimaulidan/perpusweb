@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Anggota;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\BookUser;
+use Illuminate\Support\Facades\DB;
 
 class JsonResponseController extends Controller
 {
@@ -36,14 +37,15 @@ class JsonResponseController extends Controller
      */
     public function store(Request $request)
     {
-        $book_user = new BookUser();
-        $book_user->user_id = $request->user_id;
-        $book_user->book_id = $request->book_id;
-        $book_user->date_start = $request->date_start;
-        $book_user->date_end = $request->date_end;
-        $book_user->notes = $request->notes;
-        $book_user->status = 2;
-        $book_user->save();
+        DB::table('book_users')->insert([
+            'user_id' => $request->user_id,
+            'book_id' => $request->book_id,
+            'date_start' => $request->date_start,
+            'date_end' => $request->date_end,
+            'notes' => $request->notes,
+            'status' => 2,
+            'created_at' => date('Y-m-d H:i:s')
+        ]);
 
         return response()->json(['message' => 'True']);
     }
