@@ -27,11 +27,11 @@
             <td>{{ $loop->iteration }}</td>
             <td>{{ $my_book->book->title }}</td>
             @if($my_book->status === 1)
-            <td class="text-success text-wrap">Disetujui</td>
+            <td class="badge badge-pill badge-success shadow my-2" data-toggle="tooltip" data-placement="top" title="Disetujui">Disetujui</td>
             @elseif($my_book->status === 2)
-            <td class="text-warning text-wrap">Menunggu</td>
+            <td class="badge badge-pill badge-warning shadow-sm my-2" data-toggle="tooltip" data-placement="top" title="Menunggu">Menunggu</td>
             @else
-            <td class="text-danger text-wrap">Tidak Disetujui</td>
+            <td class="badge badge-pill badge-danger shadow my-2" data-toggle="tooltip" data-placement="top" title="Menunggu">Tidak Disetujui</td>
             @endif
             <td>{{ $my_book->updated_at !== NULL ? $my_book->updated_at : '-' }}</td>
             <td>
