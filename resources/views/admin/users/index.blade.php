@@ -38,12 +38,10 @@
               <button type="submit" data-toggle="modal" data-target="#show-user-modal" data-id="{{ $user->id }}" class="btn btn-sm btn-info swal-show-button">
                 <i class="fas fa-info-circle"></i>
               </button>
-              @if(auth()->user()->role_id === 1)
-              @if(auth()->user()->id !== $user->id)
+              @if(auth()->user()->role_id === 1 && auth()->user()->id !== $user->id)
               <button type="submit" data-id="{{ $user->id }}" class="btn btn-sm btn-danger swal-delete-button">
                 <i class="fas fa-trash-alt"></i>
               </button>
-              @endif
               @endif
             </td>
           </tr>
