@@ -14,31 +14,26 @@ class BookTypesTableSeeder extends Seeder
     {
         BookType::create([
             'name' => 'Buku Cetak',
-            'slug' => 'buku-cetak',
             'description' => 'buku cetak'
         ]);
 
         BookType::create([
             'name' => 'Dongeng',
-            'slug' => 'dongeng',
             'description' => 'dongeng'
         ]);
 
         BookType::create([
             'name' => 'Majalah',
-            'slug' => 'majalah',
             'description' => 'majalah'
         ]);
 
         BookType::create([
             'name' => 'Ensiklopedia',
-            'slug' => 'ensiklopedia',
             'description' => 'ensiklopedia'
         ]);
 
         BookType::create([
             'name' => 'Biografi',
-            'slug' => 'biografi',
             'description' => 'biografi'
         ]);
     }

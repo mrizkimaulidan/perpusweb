@@ -16,7 +16,6 @@ class CreateBookTypesTable extends Migration
         Schema::create('book_types', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('slug')->unique();
             $table->longText('description');
             $table->timestamps();
         });
