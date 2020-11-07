@@ -80,22 +80,22 @@ php artisan serve
 ##### Administrator Perpustakaan
 
 ```
-Email       : admin@safemail.com
-Password    : 123456
+Email       : admin@mail.com
+Password    : secret
 ```
 
 ##### Operator Perpustakaan
 
 ```
-Email       : operator@safemail.com
-Password    : 123456
+Email       : operator@mail.com
+Password    : secret
 ```
 
 ##### Anggota Perpustakaan
 
 ```
-Email       : anggota@safemail.com
-Password    : 123456
+Email       : anggota@mail.com
+Password    : secret
 ```
 
 ### Dibuat dengan
