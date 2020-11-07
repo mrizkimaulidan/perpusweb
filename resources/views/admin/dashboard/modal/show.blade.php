@@ -1,5 +1,6 @@
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
@@ -9,7 +10,7 @@
         </button>
       </div>
       <div class="modal-body">
-        @foreach($login_logs as $key => $login_log)
+        @forelse($login_logs as $key => $login_log)
         @if($key % 1 === 0)
         <hr>
         @endif
@@ -22,7 +23,9 @@
         @if($key % 1 !== 0)
         <hr>
         @endif
-        @endforeach
+        @empty
+        <li class="list-group-item text-danger font-weight-bold text-uppercase text-center">Data tidak ada!</li>
+        @endforelse
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>

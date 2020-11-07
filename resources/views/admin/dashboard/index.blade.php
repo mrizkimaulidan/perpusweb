@@ -42,12 +42,14 @@
       <h5 class="mx-2">Log Login Pengguna</h5>
       <hr>
       <ul class="list-group">
-        @foreach($authenticate_logs as $authenticate_log)
+        @forelse($authenticate_logs as $authenticate_log)
         <li class="list-group-item">Login dari {{ $authenticate_log->user->name }} -
           {{ $authenticate_log->last_login_ip }} [
           {{ $authenticate_log->indonesian_date_format($authenticate_log->last_login_date) }}
           {{ $authenticate_log->time($authenticate_log->last_login_time) }} ]</li>
-        @endforeach
+        @empty
+        <li class="list-group-item text-danger font-weight-bold text-uppercase text-center">Data tidak ada!</li>
+        @endforelse
       </ul>
       <button type="button" class="btn btn-sm btn-primary mt-3" data-toggle="modal" data-target="#staticBackdrop">
         Lihat semua
