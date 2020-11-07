@@ -19,8 +19,8 @@ class UsersTableSeeder extends Seeder
             'user_number' => '00' . rand(10, 90) . rand(101, 199) . rand(200, 999),
             'name' => 'Admin Perpustakaan',
             'image' => 'assets/images/profiles/default.png',
-            'email' => 'admin@safemail.com',
-            'password' => Hash::make('123456'),
+            'email' => 'admin@mail.com',
+            'password' => Hash::make('secret'),
             'address' => 'Jl. Manggis',
             'status' => 0
         ]);
@@ -31,8 +31,8 @@ class UsersTableSeeder extends Seeder
             'user_number' => '00' . rand(10, 90) . rand(101, 199) . rand(200, 999),
             'name' => 'Operator Perpustakaan',
             'image' => 'assets/images/profiles/default.png',
-            'email' => 'operator@safemail.com',
-            'password' => Hash::make('123456'),
+            'email' => 'operator@mail.com',
+            'password' => Hash::make('secret'),
             'address' => 'Jl. Manggis',
             'status' => 0
         ]);
@@ -43,8 +43,8 @@ class UsersTableSeeder extends Seeder
             'user_number' => '00' . rand(10, 90) . rand(101, 199) . rand(200, 999),
             'name' => 'Anggota Perpustakaan',
             'image' => 'assets/images/profiles/default.png',
-            'email' => 'anggota@safemail.com',
-            'password' => Hash::make('123456'),
+            'email' => 'anggota@mail.com',
+            'password' => Hash::make('secret'),
             'address' => 'Jl. Manggis',
             'status' => 0
         ]);
