@@ -41,7 +41,6 @@ class BookTypeController extends Controller
     {
         $book_type = new BookType();
         $book_type->name = $request->name;
-        $book_type->slug = Str::slug($request->name);
         $book_type->description = $request->description;
         $book_type->save();
 
@@ -86,7 +85,6 @@ class BookTypeController extends Controller
         $book_type = BookType::find($id);
 
         $book_type->name = $request->name;
-        $book_type->slug = Str::slug($request->name);
         $book_type->description = $request->description;
         $book_type->save();
 
