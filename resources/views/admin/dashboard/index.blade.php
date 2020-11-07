@@ -1,4 +1,5 @@
-@extends('layouts.stisla.index', ['title' => auth()->user()->id === 1 ? 'Admin Dashboard' : 'Operator Dashboard', 'section_header' => auth()->user()->id === 1 ? 'Admin Dashboard' : 'Operator Dashboard'])
+@extends('layouts.stisla.index', ['title' => auth()->user()->id === 1 ? 'Admin Dashboard' : 'Operator Dashboard',
+'section_header' => auth()->user()->id === 1 ? 'Admin Dashboard' : 'Operator Dashboard'])
 
 @section('content')
 <div class="row">
@@ -20,9 +21,11 @@
           </div>
         </div>
       </div>
-      <div class="card-icon shadow-primary bg-primary">
-        <i class="fas fa-users"></i>
-      </div>
+      <a href="{{ route('admin.users.index') }}">
+        <div class="card-icon shadow-primary bg-primary">
+          <i class="fas fa-users mr-1"></i>
+        </div>
+      </a>
       <div class="card-wrap">
         <div class="card-header">
           <h4>Total Pengguna</h4>
@@ -40,7 +43,10 @@
       <hr>
       <ul class="list-group">
         @foreach($authenticate_logs as $authenticate_log)
-        <li class="list-group-item">Login dari {{ $authenticate_log->user->name }} - {{ $authenticate_log->last_login_ip }} [ {{ $authenticate_log->indonesian_date_format($authenticate_log->last_login_date) }} {{ $authenticate_log->time($authenticate_log->last_login_time) }} ]</li>
+        <li class="list-group-item">Login dari {{ $authenticate_log->user->name }} -
+          {{ $authenticate_log->last_login_ip }} [
+          {{ $authenticate_log->indonesian_date_format($authenticate_log->last_login_date) }}
+          {{ $authenticate_log->time($authenticate_log->last_login_time) }} ]</li>
         @endforeach
       </ul>
       <button type="button" class="btn btn-sm btn-primary mt-3" data-toggle="modal" data-target="#staticBackdrop">
