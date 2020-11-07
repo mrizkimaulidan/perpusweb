@@ -1,5 +1,6 @@
 <!-- Modal -->
-<div class="modal fade" id="book-types-show-modal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="book-types-show-modal" data-backdrop="static" tabindex="-1" role="dialog"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -14,11 +15,6 @@
             <td>Nama Kategori</td>
             <td>:</td>
             <td id="book_types_name_show"></td>
-          </tr>
-          <tr>
-            <td>Slug</td>
-            <td>:</td>
-            <td id="book_types_slug_show"></td>
           </tr>
           <tr>
             <td>Deskripsi</td>

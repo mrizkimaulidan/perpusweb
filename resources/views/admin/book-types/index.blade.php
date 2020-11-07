@@ -16,7 +16,6 @@
           <tr>
             <th>#</th>
             <th>Nama Kategori</th>
-            <th>Slug</th>
             <th>Deskripsi</th>
             <th>Aksi</th>
           </tr>
@@ -26,16 +25,18 @@
           <tr>
             <td>{{ $loop->iteration }}</td>
             <td class="book-types-name-index">{{ $book_type->name }}</td>
-            <td>{{ $book_type->slug }}</td>
             <td>{{ $book_type->description }}</td>
             <td>
-              <button type="submit" data-toggle="modal" data-target="#book-types-show-modal" data-id="{{ $book_type->id }}" class="btn btn-sm btn-info book-types-swal-show-button">
+              <button type="submit" data-toggle="modal" data-target="#book-types-show-modal"
+                data-id="{{ $book_type->id }}" class="btn btn-sm btn-info book-types-swal-show-button">
                 <i class="fas fa-info-circle"></i>
               </button>
-              <button type="submit" data-toggle="modal" data-target="#book-types-edit-modal" data-id="{{ $book_type->id }}" class="btn btn-sm btn-success book-types-swal-edit-button">
+              <button type="submit" data-toggle="modal" data-target="#book-types-edit-modal"
+                data-id="{{ $book_type->id }}" class="btn btn-sm btn-success book-types-swal-edit-button">
                 <i class="fas fa-edit"></i>
               </button>
-              <button type="submit" data-id="{{ $book_type->id }}" class="btn btn-sm btn-danger book-types-swal-delete-button">
+              <button type="submit" data-id="{{ $book_type->id }}"
+                class="btn btn-sm btn-danger book-types-swal-delete-button">
                 <i class="fas fa-trash-alt"></i>
               </button>
             </td>
