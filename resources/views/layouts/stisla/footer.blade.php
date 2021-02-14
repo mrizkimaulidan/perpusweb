@@ -22,6 +22,7 @@
 <script src="{{ asset('assets/js/stisla.js') }}"></script>
 
 <!-- JS Libraies -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <!-- Template JS File -->
 <script src="{{ asset('assets/js/scripts.js') }}"></script>

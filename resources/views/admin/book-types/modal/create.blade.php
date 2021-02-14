@@ -1,5 +1,6 @@
 <!-- Modal -->
-<div class="modal fade " id="book-types-create-modal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade " id="book-types-create-modal" data-backdrop="static" tabindex="-1" role="dialog"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -15,7 +16,8 @@
             <div class="col-lg-12">
               <div class="form-group">
                 <label for="name">Nama Kategori</label>
-                <input type="text" class="form-control" name="name" id="name_create">
+                <input type="text" class="form-control" name="name" id="name_create"
+                  placeholder="Masukkan nama kategori..">
               </div>
             </div>
           </div>
@@ -24,7 +26,8 @@
             <div class="col-lg-12">
               <div class="form-group">
                 <label for="name">Deskripsi</label>
-                <input type="text" class="form-control" name="description" id="description_create">
+                <textarea class="form-control" name="description" id="description_create" cols="30" rows="10"
+                  style="height: 100px;" placeholder="Masukkan deskripsi.. (opsional)"></textarea>
               </div>
             </div>
           </div>
@@ -33,7 +36,8 @@
             <div class="col-lg-12">
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                <button type="submit" class="btn btn-primary" id="book-types-create-button">Tambah Kategori Buku</button>
+                <button type="submit" class="btn btn-primary" id="book-types-create-button">Tambah Kategori
+                  Buku</button>
               </div>
             </div>
           </div>

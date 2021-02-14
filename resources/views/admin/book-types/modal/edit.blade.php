@@ -1,5 +1,6 @@
 <!-- Modal -->
-<div class="modal fade " id="book-types-edit-modal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade " id="book-types-edit-modal" data-backdrop="static" tabindex="-1" role="dialog"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -24,7 +25,8 @@
             <div class="col-lg-12">
               <div class="form-group">
                 <label for="description">Deskripsi</label>
-                <textarea class="form-control" name="description" id="description_edit" rows="3"></textarea>
+                <textarea class="form-control" name="description" id="description_edit"
+                  style="height: 100px;"></textarea>
               </div>
             </div>
           </div>
@@ -33,7 +35,8 @@
             <div class="col-lg-12">
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                <button type="submit" data-id="" class="btn btn-primary" id="book-types-swal-update-button">Ubah Kategori Buku</button>
+                <button type="submit" data-id="" class="btn btn-primary" id="book-types-swal-update-button">Ubah
+                  Kategori Buku</button>
               </div>
             </div>
           </div>

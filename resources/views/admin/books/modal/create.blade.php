@@ -1,5 +1,6 @@
 <!-- Modal -->
-<div class="modal fade bd-example-modal-lg" id="create-book-modal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade bd-example-modal-lg" id="create-book-modal" data-backdrop="static" tabindex="-1" role="dialog"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -15,14 +16,16 @@
             <div class="col-lg-6">
               <div class="form-group">
                 <label for="title">Judul Buku</label>
-                <input type="text" class="form-control" name="title" id="title_create">
+                <input type="text" class="form-control" name="title" id="title_create"
+                  placeholder="Masukkan judul buku..">
               </div>
             </div>
 
             <div class="col-lg-6">
               <div class="form-group">
                 <label for="book_type_id">Tipe Buku</label>
-                <select class="form-control" name="book_type_id" id="book_type_id_create">
+                <select class="form-control" name="book_type_id" id="book_type_id_create" style="width: 100%;">
+                  <option selected>Pilih Tipe Buku</option>
                   @foreach($book_types as $book_type)
                   <option value="{{ $book_type->id }}">{{ $book_type->name }}</option>
                   @endforeach
@@ -35,14 +38,16 @@
             <div class="col-lg-6">
               <div class="form-group">
                 <label for="publisher">Penerbit</label>
-                <input type="text" class="form-control" name="publisher" id="publisher_create">
+                <input type="text" class="form-control" name="publisher" id="publisher_create"
+                  placeholder="Masukkan penerbit..">
               </div>
             </div>
 
             <div class="col-lg-6">
               <label for="date_of_added">Tanggal Ditambahkan</label>
               <div class="input-group">
-                <input type="date" class="form-control" name="date_of_added" id="date_of_added_create">
+                <input type="date" class="form-control" name="date_of_added" id="date_of_added_create"
+                  placeholder="Pilih tanggal ditambahkan..">
                 <div class="input-group-append">
                   <span class="input-group-text" id="basic-addon2"><i class="far fa-calendar-alt"></i></span>
                 </div>
@@ -55,7 +60,8 @@
             <div class="col-lg-12">
               <div class="form-group">
                 <label for="title">Bahasa</label>
-                <input type="text" class="form-control" name="languages" id="languages_create">
+                <input type="text" class="form-control" name="languages" id="languages_create"
+                  placeholder="Masukkan bahasa..">
               </div>
             </div>
           </div>

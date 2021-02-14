@@ -33,9 +33,12 @@
             <td>{{ $user->name }}</td>
             <td>{{ $user->role->name }}</td>
             <td>{{ $user->email }}</td>
-            <td class="text-small {{ $user->status === 1 ? 'text-success' : 'text-danger' }}"><i class="fas fa-circle" data-toggle="tooltip" data-placement="top" title="{{ $user->status === 1 ? 'Online' : 'Offline' }}"></i></td>
+            <td class="text-small {{ $user->status === 1 ? 'text-success' : 'text-danger' }}"><i class="fas fa-circle"
+                data-toggle="tooltip" data-placement="top" title="{{ $user->status === 1 ? 'Online' : 'Offline' }}"></i>
+            </td>
             <td>
-              <button type="submit" data-toggle="modal" data-target="#show-user-modal" data-id="{{ $user->id }}" class="btn btn-sm btn-info swal-show-button">
+              <button type="submit" data-toggle="modal" data-target="#show-user-modal" data-id="{{ $user->id }}"
+                class="btn btn-sm btn-info swal-show-button">
                 <i class="fas fa-info-circle"></i>
               </button>
               @if(auth()->user()->role_id === 1 && auth()->user()->id !== $user->id)
