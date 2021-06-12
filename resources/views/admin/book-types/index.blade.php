@@ -27,7 +27,7 @@
             <td>{{ $loop->iteration }}</td>
             <td class="book-types-name-index">{{ $book_type->name }}</td>
             <td>{{ $book_type->description }}</td>
-            <td>
+            <td class="btn-group" role="group">
               <button type="submit" data-toggle="modal" data-target="#book-types-show-modal"
                 data-id="{{ $book_type->id }}" class="btn btn-sm btn-info book-types-swal-show-button">
                 <i class="fas fa-info-circle"></i>
@@ -36,10 +36,14 @@
                 data-id="{{ $book_type->id }}" class="btn btn-sm btn-success book-types-swal-edit-button">
                 <i class="fas fa-edit"></i>
               </button>
-              <button type="submit" data-id="{{ $book_type->id }}"
-                class="btn btn-sm btn-danger book-types-swal-delete-button">
-                <i class="fas fa-trash-alt"></i>
-              </button>
+              <form action="{{ route('admin.book-types.destroy', $book_type->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
+
+                <button type="submit" class="btn btn-sm btn-danger book-types-swal-delete-button">
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </form>
             </td>
           </tr>
           @endforeach

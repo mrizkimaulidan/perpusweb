@@ -86,7 +86,9 @@
             });
         });
 
-        $(".book-types-swal-delete-button").click(function() {
+        $(".book-types-swal-delete-button").click(function(e) {
+            e.preventDefault();
+            
             Swal.fire({
                 title: "Hapus?",
                 text: "Data tidak akan bisa dikembalikan.",
@@ -98,45 +100,27 @@
                 cancelButtonText: "Batal"
             }).then(result => {
                 if (result.value) {
-                    let id = $(this).data("id");
-                    let token = $("input[name=_token]").val();
-
-                    $.ajax({
-                        url: "book-types/" + id,
-                        type: "DELETE",
-                        data: {
-                            id: id,
-                            _token: token
+                    Swal.fire({
+                        title: "Proses",
+                        text: "Sedang melakukan proses..",
+                        icon: "success",
+                        timerProgressBar: true,
+                        onBeforeOpen: () => {
+                            Swal.showLoading();
+                            timerInterval = setInterval(() => {
+                                const content = Swal.getContent();
+                                if (content) {
+                                    const b = content.querySelector("b");
+                                    if (b) {
+                                        b.textContent = Swal.getTimerLeft();
+                                    }
+                                }
+                            }, 100);
                         },
-                        success: function(data) {
-                            Swal.fire({
-                                title: "Berhasil",
-                                text: "Data berhasil dihapus.",
-                                icon: "success",
-                                timerProgressBar: true,
-                                onBeforeOpen: () => {
-                                    Swal.showLoading();
-                                    timerInterval = setInterval(() => {
-                                        const content = Swal.getContent();
-                                        if (content) {
-                                            const b = content.querySelector("b");
-                                            if (b) {
-                                                b.textContent = Swal.getTimerLeft();
-                                            }
-                                        }
-                                    }, 100);
-                                },
-                                showConfirmButton: false
-                            });
-
-                            setTimeout(function() {
-                                location.reload();
-                            }, 800);
-                        },
-                        error: function(data) {
-                            Swal.fire("Gagal!", "Data gagal dihapus.", "warning");
-                        }
+                        showConfirmButton: false
                     });
+
+                    $(this).parent().submit();
                 }
             });
         });

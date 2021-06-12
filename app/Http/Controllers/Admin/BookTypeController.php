@@ -98,8 +98,6 @@ class BookTypeController extends Controller
     {
         BookType::find($id)->delete();
 
-        return response()->json([
-            'success' => 'Record deleted successfully!'
-        ]);
+        return redirect()->route('admin.book-types.index')->with('success', 'Data berhasil dihapus!');
     }
 }
