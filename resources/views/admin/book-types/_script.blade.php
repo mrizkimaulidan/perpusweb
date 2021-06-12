@@ -25,22 +25,15 @@
 
         $(".book-types-swal-show-button").click(function() {
             let id = $(this).data("id");
-            let token = $("input[name=_token]").val();
-            $.ajax({
-                url: "book-types/" + id,
-                type: "GET",
-                data: {
-                    id: id,
-                    _token: token
-                },
-                success: function(data) {
-                    let name = data.data.name;
-                    let slug = data.data.slug;
-                    let description = data.data.description;
 
-                    $("#book_types_name_show").html(name);
-                    $("#book_types_slug_show").html(slug);
-                    $("#book_types_description_show").html(description);
+            let url = "{{ route('api.book-type.show', 'id') }}";
+            url = url.replace('id', id);
+
+            $.ajax({
+                url: url,
+                success: function(response) {
+                    $("#book_types_name_show").html(response.data.name);
+                    $("#book_types_description_show").html(response.data.description);
                 },
                 error: function(data) {
                     Swal.fire("Gagal!", "Tidak dapat melihat info kategori buku.", "warning");
