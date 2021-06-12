@@ -1,68 +1,26 @@
 <script>
     $(document).ready(function() {
 
-        $("#book-types-create-button").click(function(e) {
-            let token = $("input[name=_token]").val();
-            let name = $("#name_create").val();
-            let description = $("#description_create").val();
-
-            $.ajax({
-                url: "book-types",
-                type: "PUT",
-                data: {
-                    _token: token,
-                    name: name,
-                    description: description
+        $('#book-types-create-button').click(function(e) {
+            Swal.fire({
+                title: "Proses",
+                text: "Sedang melakukan proses..",
+                icon: "success",
+                timerProgressBar: true,
+                onBeforeOpen: () => {
+                    Swal.showLoading();
+                    timerInterval = setInterval(() => {
+                        const content = Swal.getContent();
+                        if (content) {
+                            const b = content.querySelector("b");
+                            if (b) {
+                                b.textContent = Swal.getTimerLeft();
+                            }
+                        }
+                    }, 100);
                 },
-                success: function(data) {
-                    Swal.fire({
-                        title: "Berhasil",
-                        text: "Data berhasil ditambahkan.",
-                        icon: "success",
-                        timerProgressBar: true,
-                        onBeforeOpen: () => {
-                            Swal.showLoading();
-                            timerInterval = setInterval(() => {
-                                const content = Swal.getContent();
-                                if (content) {
-                                    const b = content.querySelector("b");
-                                    if (b) {
-                                        b.textContent = Swal.getTimerLeft();
-                                    }
-                                }
-                            }, 100);
-                        },
-                        showConfirmButton: false
-                    });
-                    setTimeout(function() {
-                        location.reload();
-                    }, 800)
-                },
-                error: function(data) {
-                    Swal.fire({
-                        title: "Berhasil",
-                        text: "Data berhasil ditambahkan.",
-                        icon: "success",
-                        timerProgressBar: true,
-                        onBeforeOpen: () => {
-                            Swal.showLoading();
-                            timerInterval = setInterval(() => {
-                                const content = Swal.getContent();
-                                if (content) {
-                                    const b = content.querySelector("b");
-                                    if (b) {
-                                        b.textContent = Swal.getTimerLeft();
-                                    }
-                                }
-                            }, 100);
-                        },
-                        showConfirmButton: false
-                    });
-                    setTimeout(function() {
-                        location.reload();
-                    }, 800)
-                }
-            })
+                showConfirmButton: false
+            });
         });
 
         $(".book-types-swal-show-button").click(function() {

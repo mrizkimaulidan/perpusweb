@@ -39,12 +39,12 @@ class BookTypeController extends Controller
      */
     public function store(Request $request)
     {
-        $book_type = new BookType();
-        $book_type->name = $request->name;
-        $book_type->description = $request->description;
-        $book_type->save();
+        BookType::create([
+            'name' => $request->name,
+            'description' => $request->description
+        ]);
 
-        return redirect()->route('admin.book-types.index');
+        return redirect()->route('admin.book-types.index')->with('success', 'Data berhasil ditambahkan!');
     }
 
     /**

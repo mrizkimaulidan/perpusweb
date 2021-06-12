@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class BookType extends Model
 {
-    protected $guarded = [];
+    protected $fillable = ['name', 'description'];
 
     public function book()
     {

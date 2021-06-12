@@ -3,6 +3,7 @@
 @section('content')
 <div class="row">
   <div class="col-lg-12 table-responsive">
+    @include('layouts.utilities.flash-message')
     <div class="card px-3 py-3">
       <div class="row">
         <div class="col-lg-12 px-3 py-3 text-right">
