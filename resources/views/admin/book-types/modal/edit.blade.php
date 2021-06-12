@@ -10,8 +10,9 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="" method="PUT" id="edit-form">
+        <form action="#" method="POST" id="edit-form">
           @csrf
+          @method('PUT')
           <div class="row">
             <div class="col-lg-12">
               <div class="form-group">

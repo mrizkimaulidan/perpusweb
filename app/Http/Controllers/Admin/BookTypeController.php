@@ -55,9 +55,7 @@ class BookTypeController extends Controller
      */
     public function show($id)
     {
-        $book_type = BookType::find($id);
-
-        return response()->json(['data' => $book_type]);
+        //
     }
 
     /**
@@ -68,9 +66,7 @@ class BookTypeController extends Controller
      */
     public function edit($id)
     {
-        $book_type = BookType::find($id);
-
-        return response()->json(['data' => $book_type]);
+        //
     }
 
     /**
@@ -84,11 +80,12 @@ class BookTypeController extends Controller
     {
         $book_type = BookType::find($id);
 
-        $book_type->name = $request->name;
-        $book_type->description = $request->description;
-        $book_type->save();
+        $book_type->update([
+            'name' => $request->name,
+            'description' => $request->description
+        ]);
 
-        return response()->json(['data' => $book_type]);
+        return redirect()->route('admin.book-types.index')->with('success', 'Data berhasil diubah!');
     }
 
     /**
