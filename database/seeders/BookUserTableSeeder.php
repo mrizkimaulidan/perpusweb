@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use App\BookUser;
 use Illuminate\Database\Seeder;
 
